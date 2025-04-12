@@ -8,7 +8,7 @@ module.exports = {
   entry: resolvePath('src', 'index.js'),
   stats: 'errors-warnings',
   output: {
-    path: resolvePath('dist'),
+    path: resolvePath('docs'),
     filename: 'bundle.js',
   },
   module: {
