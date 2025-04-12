@@ -1,6 +1,7 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const webpackBar = require('webpackbar')
+const CopyPlugin = require('copy-webpack-plugin')
 const resolvePath = (...segments) => path.resolve(__dirname, ...segments)
 
 module.exports = {
@@ -45,6 +46,17 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       template: resolvePath('public', 'index.html'),
+    }),
+    new CopyPlugin({
+      patterns: [
+        {
+          from: "public",
+          to: ".",
+          globOptions: {
+            ignore: ["**/index.html"],
+          },
+        },
+      ],
     }),
     new webpackBar(),
   ],
