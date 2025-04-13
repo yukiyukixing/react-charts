@@ -88,6 +88,50 @@ function App() {
 
   const { months, incomeData, expenseData } = combinedData()
 
+  // 添加支出标线配置
+  const expenseMarkLine = {
+    silent: false,
+    symbol: ['circle', 'arrow'], // 起点使用圆圈，终点使用箭头
+    symbolSize: [8, 10], // 设置起点和终点符号的大小
+    lineStyle: {
+      color: '#1DA9A0',
+      type: 'dashed', // 改为虚线
+      width: 1,
+    },
+    label: {
+      formatter: '5000',
+      position: 'end',
+    },
+    data: [
+      {
+        yAxis: 5000,
+        name: '5000',
+      },
+    ],
+  }
+
+  // 添加收入标线配置
+  const incomeMarkLine = {
+    silent: false,
+    symbol: ['circle', 'arrow'], // 起点使用圆圈，终点使用箭头
+    symbolSize: [8, 10], // 设置起点和终点符号的大小
+    lineStyle: {
+      color: '#1DA9A0',
+      type: 'dashed', // 虚线
+      width: 1,
+    },
+    label: {
+      formatter: '6万',
+      position: 'end',
+    },
+    data: [
+      {
+        yAxis: 60000,
+        name: '6万',
+      },
+    ],
+  }
+
   return (
     <>
       <div className="app-container">
@@ -136,6 +180,7 @@ function App() {
               seriesName="收入"
               color="#1DA9A0"
               decimalPlaces={1}
+              markLine={incomeMarkLine}
             />
           </div>
         </div>
@@ -150,9 +195,10 @@ function App() {
               xAxisData={salesDataObjects.map((item) => item.month)}
               seriesData={salesDataObjects.map((item) => item.sales)}
               seriesName="支出"
-              color="#1DA9A0"
+              color="#FF0000"
               labelColor="#FF0000"
               decimalPlaces={1}
+              markLine={expenseMarkLine}
             />
           </div>
         </div>
@@ -168,7 +214,7 @@ function App() {
               xAxisData={debtDataObjects.map((item) => item.month)}
               seriesData={debtDataObjects.map((item) => item.sales)}
               seriesName="负债"
-              color="#1DA9A0"
+              color="#FF0000"
               labelColor="#FF0000"
               decimalPlaces={2}
             />

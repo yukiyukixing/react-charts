@@ -12,6 +12,7 @@ function LineCharts({
   labelColor = null,
   decimalPlaces = 2,
   multiSeries = null, // 新增：多数据系列
+  markLine = null, // 新增：标线配置
 }) {
   const chartRef = useRef(null)
   let chartInstance = null
@@ -125,6 +126,7 @@ function LineCharts({
               color: item.labelColor || item.color,
               distance: 10,
             },
+            markLine: item.showMarkLine && markLine ? markLine : null,
             smooth: true,
             emphasis: {
               scale: 1,
@@ -164,6 +166,7 @@ function LineCharts({
                 color: labelColor || color,
                 distance: 10,
               },
+              markLine: markLine,
               smooth: true,
               triggerLineEvent: false,
               emphasis: {
@@ -215,19 +218,21 @@ function LineCharts({
           if (option.series[index]) {
             option.series[index].data = series.data
             option.series[index].name = series.name
+            option.series[index].markLine = series.showMarkLine && markLine ? markLine : null
           }
         })
       } else {
         // 更新单条线数据
         option.series[0].data = seriesData
         option.series[0].name = seriesName
+        option.series[0].markLine = markLine
       }
 
       option.title[0].text = title
 
       chartInstance.setOption(option)
     }
-  }, [xAxisData, seriesData, seriesName, title, multiSeries])
+  }, [xAxisData, seriesData, seriesName, title, multiSeries, markLine])
 
   return <div className="line-chart-container" ref={chartRef}></div>
 }
@@ -243,6 +248,7 @@ LineCharts.propTypes = {
   decimalPlaces: PropTypes.number,
   multiSeries: PropTypes.array,
   smooth: PropTypes.bool,
+  markLine: PropTypes.object,
 }
 
 export default LineCharts
