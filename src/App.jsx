@@ -224,6 +224,20 @@ function App() {
           </div>
         </div>
       </div>
+      <div className="app-container">
+        <h1 className="app-title">月度利息支出</h1>
+
+        <div className="charts-wrapper">
+          <div className="chart-item"></div>
+        </div>
+      </div>
+      <div className="app-container">
+        <h1 className="app-title">月度投资收入</h1>
+
+        <div className="charts-wrapper">
+          <div className="chart-item"></div>
+        </div>
+      </div>
     </>
   )
 }
