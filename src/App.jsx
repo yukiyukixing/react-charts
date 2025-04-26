@@ -135,6 +135,9 @@ function App() {
   return (
     <>
       <div className="app-container">
+        <h1 className="app-main-title">
+          <span>挂图</span>
+        </h1>
         <h1 className="app-title">收入支出对比图</h1>
 
         <div className="charts-wrapper">
