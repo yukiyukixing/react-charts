@@ -3,7 +3,7 @@ import LineCharts from './LineCharts'
 import './App.css'
 
 function App() {
-  // 组合月份和销售数据为对象数组
+  // 支出
   const salesDataObjects = [
     { month: '2024.01', sales: 17589 },
     { month: '2024.02', sales: 17391 },
@@ -20,8 +20,10 @@ function App() {
     { month: '2025.01', sales: 37397 },
     { month: '2025.02', sales: 14040 },
     { month: '2025.03', sales: 43905 },
+    { month: '2025.04', sales: 32582 },
   ]
 
+  // 收入
   const incomeDataObjects = [
     { month: '2024.03', sales: 25322 },
     { month: '2024.04', sales: 27581 },
@@ -36,6 +38,7 @@ function App() {
     { month: '2025.01', sales: 31076 },
     { month: '2025.02', sales: 30982 },
     { month: '2025.03', sales: 39946 },
+    { month: '2025.04', sales: 35021 },
   ]
 
   const debtDataObjects = [
@@ -54,6 +57,7 @@ function App() {
     { month: '2025.01', sales: 261555 },
     { month: '2025.02', sales: 243390 },
     { month: '2025.03', sales: 232417 },
+    { month: '2025.04', sales: 250693 },
   ]
 
   // 合并收入和支出的月份，去重
