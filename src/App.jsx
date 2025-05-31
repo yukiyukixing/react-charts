@@ -21,6 +21,7 @@ function App() {
     { month: '2025.02', sales: 14040 },
     { month: '2025.03', sales: 43905 },
     { month: '2025.04', sales: 32582 },
+    { month: '2025.05', sales: 42162 },
   ]
 
   // 收入
@@ -39,6 +40,7 @@ function App() {
     { month: '2025.02', sales: 30982 },
     { month: '2025.03', sales: 39946 },
     { month: '2025.04', sales: 35021 },
+    { month: '2025.05', sales: 35021 },
   ]
 
   const debtDataObjects = [
@@ -58,6 +60,7 @@ function App() {
     { month: '2025.02', sales: 243390 },
     { month: '2025.03', sales: 232417 },
     { month: '2025.04', sales: 250693 },
+    { month: '2025.05', sales: 259771 },
   ]
 
   // 合并收入和支出的月份，去重
