@@ -22,6 +22,7 @@ function App() {
     { month: '2025.03', sales: 43905 },
     { month: '2025.04', sales: 32582 },
     { month: '2025.05', sales: 42162 },
+    { month: '2025.06', sales: 21317 },
   ]
 
   // 收入
@@ -41,8 +42,10 @@ function App() {
     { month: '2025.03', sales: 39946 },
     { month: '2025.04', sales: 35021 },
     { month: '2025.05', sales: 35021 },
+    { month: '2025.06', sales: 30078 },
   ]
 
+  // 负债
   const debtDataObjects = [
     { month: '2024.01', sales: 267874 },
     { month: '2024.02', sales: 267874 },
@@ -229,20 +232,6 @@ function App() {
               decimalPlaces={2}
             />
           </div>
-        </div>
-      </div>
-      <div className="app-container">
-        <h1 className="app-title">月度利息支出</h1>
-
-        <div className="charts-wrapper">
-          <div className="chart-item"></div>
-        </div>
-      </div>
-      <div className="app-container">
-        <h1 className="app-title">月度投资收入</h1>
-
-        <div className="charts-wrapper">
-          <div className="chart-item"></div>
         </div>
       </div>
     </>
